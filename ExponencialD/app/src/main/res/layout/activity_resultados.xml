@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultadosActivity"
+    android:background="@color/colorPrimaryDark">
+
+    <RelativeLayout
+        android:id="@+id/rlDatos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/tvSubtitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingresa el tiempo No. 1"
+            android:textSize="12dp"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tvIngresarItems"/>
+
+        <LinearLayout
+            android:id="@+id/llDatoTiempo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/tvSubtitulo"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TIEMPO (T):"
+                android:textSize="15dp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etTiempo"
+                android:layout_width="145dp"
+                android:layout_height="45dp"
+                android:inputType="text"
+                android:textSize="15dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:hint="Introduce el tiempo"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAddItem"
+            android:layout_width="225dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/llDatoTiempo"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorAccent"
+            android:onClick="addNuevoDato"
+            android:text="AÑADIR TIEMPO"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tituloResultados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TABLA DE RESULTADOS"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/rlDatos"/>
+
+    <TableLayout
+        android:id="@+id/tablaResultados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tituloResultados">
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btnVerResultados"
+        android:layout_width="225dp"
+        android:layout_height="40dp"
+        android:text="VER RESULTADOS"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_red_light"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tablaResultados"
+        android:layout_marginTop="16dp"
+        android:onClick="verResultados"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tituloResultados"
+        tools:background="@color/colorAccent">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </HorizontalScrollView>
+
+    </ScrollView>
+
+</RelativeLayout>
